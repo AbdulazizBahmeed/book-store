@@ -1,7 +1,19 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-light">
     <!-- Container wrapper -->
     <div class="container-fluid">
+        <!-- Toggle button -->
+        <button
+            data-mdb-collapse-init
+            class="navbar-toggler"
+            type="button"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Navbar brand -->
@@ -13,9 +25,9 @@
                     loading="lazy" />
             </a>
             <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item" >
-                    <a class="nav-link active" href="#" >Dashboard</a>
+            <ul class="navbar-nav  mb-2 mb-lg-0 justify-content-around w-100">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Team</a>
@@ -58,7 +70,7 @@
                 </ul>
             </div>
             <!-- Avatar -->
-            <div class="dropdown">
+            <div class="dropdown avatar">
                 <a
                     data-mdb-dropdown-init
                     class="dropdown-toggle d-flex align-items-center"

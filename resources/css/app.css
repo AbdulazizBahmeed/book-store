@@ -1,5 +1,55 @@
+:root {
+    --primary-color: #cb6040;
+    --secondary-color: #257180;
+    --mdb-nav-link-color: var(--primary-color);
+    --mdb-navbar-active-color: var(--primary-color);
+    --mdb-nav-link-font-size: 1.2rem
+}
+
+/* NavBar */
+.navbar-nav {
+    padding: 0 15%;
+}
+.navbar {
+    --mdb-nav-link-color: var(--primary-color);
+    --mdb-navbar-active-color: var(--primary-color);
+}
+
+.nav-link {
+    transition: all 0.5s;
+    position: relative;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:after {
+    transition: all 0.3s;
+    content: "";
+    background: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    height: 10%;
+    width: 0%;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+    width: 80%;
+}
+
+.nav-link.active:after {
+    width: 35%;
+}
+
+.avatar a {
+    color: black;
+}
+
 #notifications-icon {
-    transition: all 0.2s;
+    transition: all 0.1s;
 }
 .notifications:hover #notifications-icon {
     color: black;
