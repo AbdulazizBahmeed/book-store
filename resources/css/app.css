@@ -1,3 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+#notifications-icon {
+    transition: all 0.2s;
+}
+.notifications:hover #notifications-icon {
+    color: black;
+}
