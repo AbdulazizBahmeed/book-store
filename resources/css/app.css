@@ -1,3 +1,4 @@
+/* start global styles settings */
 :root {
     --primary-color: #257180;
     --primary-color-light: #63d9f0;
@@ -12,26 +13,31 @@
     --mdb-btn-hover-color: black;
     --mdb-btn-focus-bg: var(--primary-color-light);
     --mdb-btn-focus-color: black;
-    --mdb-btn-active-bg:var(--primary-color);
+    --mdb-btn-active-bg: var(--primary-color);
     --mdb-btn-active-color: white;
     --mdb-btn-box-shadow-state: 0 0 15px 3px #25718033, 0 0 15px 5px #25718033;
 }
 
-.btn-check:focus-visible+.btn-primary, .btn-check:focus+.btn-primary, .btn-primary:focus {
+.btn-check:focus-visible + .btn-primary,
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
     color: black;
 }
 
 body {
     font-family: "Delius Unicase", cursive;
     font-style: normal;
+    background-color: #ececec;
 }
+
+/* end global styles settings */
 
 /* NavBar */
 .navbar {
     --mdb-nav-link-color: var(--primary-color-light);
     --mdb-navbar-active-color: var(--primary-color-light);
     background-color: transparent;
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: rgb(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
 }
 
@@ -43,7 +49,7 @@ body {
     transition: all 0.5s;
     position: relative;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 .nav-link:hover {
@@ -71,13 +77,19 @@ body {
 }
 
 .avatar a {
-    color: white;
+    color: black;
 }
 
 #notifications-icon {
     transition: all 0.1s;
+    color: black;
+}
+
+/* end navbar */
+
+/* start footer */
+footer {
     color: white;
+    background-color: var(--primary-color);
 }
-#notifications-icon:hover {
-    text-shadow: 1px 1px 5px white;
-}
+/* start footer */

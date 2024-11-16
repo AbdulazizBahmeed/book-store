@@ -42,12 +42,10 @@
     @include('layouts.navbar')
 
     <!-- [ Main Content ] start -->
-    <div>
         @yield('content')
-    </div>
     <!-- [ Main Content ] end -->
 
-    {{-- @include('layouts.footer') --}}
+    @include('layouts.footer')
     @yield('scripts')
 </body>
 <!-- [Body] end -->
