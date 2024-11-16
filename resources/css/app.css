@@ -1,34 +1,60 @@
 :root {
-    --primary-color: #cb6040;
-    --secondary-color: #257180;
-    --mdb-nav-link-color: var(--primary-color);
-    --mdb-navbar-active-color: var(--primary-color);
-    --mdb-nav-link-font-size: 1.2rem
+    --primary-color: #257180;
+    --primary-color-light: #63d9f0;
+    --primary-color-light-rgb: #25718033;
+}
+
+.btn.btn-primary {
+    --mdb-btn-bg: var(--primary-color);
+    --mdb-btn-color: white;
+    --mdb-btn-box-shadow: 0 0 10px 1px var(--primary-color);
+    --mdb-btn-hover-bg: var(--primary-color-light);
+    --mdb-btn-hover-color: black;
+    --mdb-btn-focus-bg: var(--primary-color-light);
+    --mdb-btn-focus-color: black;
+    --mdb-btn-active-bg:var(--primary-color);
+    --mdb-btn-active-color: white;
+    --mdb-btn-box-shadow-state: 0 0 15px 3px #25718033, 0 0 15px 5px #25718033;
+}
+
+.btn-check:focus-visible+.btn-primary, .btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: black;
+}
+
+body {
+    font-family: "Delius Unicase", cursive;
+    font-style: normal;
 }
 
 /* NavBar */
+.navbar {
+    --mdb-nav-link-color: var(--primary-color-light);
+    --mdb-navbar-active-color: var(--primary-color-light);
+    background-color: transparent;
+    background-color: rgb(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
 .navbar-nav {
     padding: 0 15%;
-}
-.navbar {
-    --mdb-nav-link-color: var(--primary-color);
-    --mdb-navbar-active-color: var(--primary-color);
 }
 
 .nav-link {
     transition: all 0.5s;
     position: relative;
     font-weight: bold;
+    color: white;
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--primary-color-light);
+    text-shadow: 2px 2px 10px var(--primary-color-light);
 }
 
 .nav-link:after {
     transition: all 0.3s;
     content: "";
-    background: var(--primary-color);
+    background: var(--primary-color-light);
     position: absolute;
     bottom: 0;
     left: 0.5rem;
@@ -45,12 +71,13 @@
 }
 
 .avatar a {
-    color: black;
+    color: white;
 }
 
 #notifications-icon {
     transition: all 0.1s;
+    color: white;
 }
-.notifications:hover #notifications-icon {
-    color: black;
+#notifications-icon:hover {
+    text-shadow: 1px 1px 5px white;
 }
