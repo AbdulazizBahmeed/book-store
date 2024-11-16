@@ -8,14 +8,14 @@
 .btn.btn-primary {
     --mdb-btn-bg: var(--primary-color);
     --mdb-btn-color: white;
-    --mdb-btn-box-shadow: 0 0 10px 1px var(--primary-color);
+    --mdb-btn-box-shadow: 0 0 5px 1px var(--primary-color);
     --mdb-btn-hover-bg: var(--primary-color-light);
     --mdb-btn-hover-color: black;
     --mdb-btn-focus-bg: var(--primary-color-light);
     --mdb-btn-focus-color: black;
     --mdb-btn-active-bg: var(--primary-color);
     --mdb-btn-active-color: white;
-    --mdb-btn-box-shadow-state: 0 0 15px 3px #25718033, 0 0 15px 5px #25718033;
+    --mdb-btn-box-shadow-state: 0 0 10px 2px #25718033, 0 0 10px 2px #25718033;
 }
 
 .btn-check:focus-visible + .btn-primary,
@@ -29,6 +29,21 @@ body {
     font-style: normal;
     background-color: #ececec;
 }
+
+input[type="date"] {
+    position: relative;
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: transparent;
+    background: transparent;
+  }
 
 /* end global styles settings */
 

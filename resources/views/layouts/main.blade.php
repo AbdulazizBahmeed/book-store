@@ -23,10 +23,12 @@
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.min.css"
         rel="stylesheet" />
-    <!-- MDB -->
     <script
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.umd.min.js" defer></script>
+
+    <!-- app.js -->
+    <script src="{{ URL::asset('js/app.js') }}" type="module"></script>
 
     <!-- app.css -->
     <link
@@ -42,7 +44,7 @@
     @include('layouts.navbar')
 
     <!-- [ Main Content ] start -->
-        @yield('content')
+    @yield('content')
     <!-- [ Main Content ] end -->
 
     @include('layouts.footer')

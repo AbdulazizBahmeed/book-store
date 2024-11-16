@@ -49,7 +49,7 @@
         font-weight: bold;
     }
 
-    .books-section h5::after {
+    .books-section-label::after {
         content: "";
         background: var(--primary-color);
         position: absolute;
@@ -61,7 +61,7 @@
 
     .books-list {
         gap: 6rem;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 </style>
 @endsection
@@ -88,47 +88,16 @@
 
 <!-- start books list -->
 
-<div class="books-section  p-5 w-100">
-    <h5 class="ps-3 mb-5 position-relative">books</h5>
+<div class="books-section p-5 w-100">
+    <h5 class="books-section-label ps-3 mb-5 position-relative">books</h5>
     <div class="books-list d-flex justify-content-start container-fluid flex-wrap">
-        <div class="card col-lg-2 col-md-3 col-sm-10">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-init data-mdb-ripple-color="light">
-                <img src="{{ URL::asset('images/why-we-sleep.jpg') }}" class="card-img-top" />
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-            </div>
-            <div class="card-body p-3">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                        4.3
-                    </div>
-                    <div>653 reviews</div>
-                </div>
-                <a href="#!" class="btn btn-primary btn-rounded w-100 mt-3" data-mdb-ripple-init>Button</a>
-            </div>
-        </div>
-
-        <div class="card col-lg-2 col-md-3 col-sm-6">
-            <div class="bg-image hover-overlay ripple" data-mdb-ripple-init data-mdb-ripple-color="light">
-                <img src="{{ URL::asset('images/why-we-sleep.jpg') }}" class="card-img-top" />
-                <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-                </a>
-            </div>
-            <div class="card-body p-3">
-                <div class="book-meta d-flex justify-content-between">
-                    <div>
-                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                        4.3
-                    </div>
-                    <div>653 reviews</div>
-                </div>
-                <a href="#!" class="btn btn-primary btn-rounded w-100 mt-3" data-mdb-ripple-init>Button</a>
-            </div>
-        </div>
+        @for ($i = 0; $i < 10; $i++)
+            <x-book-card :id=$i></x-book-card>
+            @endfor
     </div>
 </div>
 <!-- end book list -->
+
 
 @endsection
 

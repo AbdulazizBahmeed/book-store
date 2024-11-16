@@ -8,8 +8,9 @@
         data-mdb-ripple-init
         class="btn text-white btn-floating m-1"
         style="background-color: #55acee;"
-        href="#!"
+        href="https://x.com/A_Bahmeed"
         role="button"
+        target="_blank"
         ><i class="fab fa-twitter"></i
       ></a>
 
@@ -18,8 +19,9 @@
         data-mdb-ripple-init
         class="btn text-white btn-floating m-1"
         style="background-color: #0082ca;"
-        href="#!"
+        href="https://www.linkedin.com/in/abdulazizbahmeed/"
         role="button"
+        target="_blank"
         ><i class="fab fa-linkedin-in"></i
       ></a>
 
@@ -28,8 +30,9 @@
         data-mdb-ripple-init
         class="btn text-white btn-floating m-1"
         style="background-color: #333333;"
-        href="#!"
+        href="https://github.com/AbdulazizBahmeed"
         role="button"
+        target="_blank"
         ><i class="fab fa-github"></i
       ></a>
 
