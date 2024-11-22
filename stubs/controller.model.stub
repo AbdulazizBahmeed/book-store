@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace {{ namespace }};
 
-use Illuminate\Http\Request;
+use {{ namespacedModel }};
+use {{ rootNamespace }}Http\Controllers\Controller;
+use {{ namespacedRequests }}
 
-class HomeController extends Controller
+class {{ class }} extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('index');
+        //
     }
 
     /**
@@ -25,7 +27,7 @@ class HomeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store({{ storeRequest }} $request)
     {
         //
     }
@@ -33,7 +35,7 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show({{ model }} ${{ modelVariable }})
     {
         //
     }
@@ -41,7 +43,7 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit({{ model }} ${{ modelVariable }})
     {
         //
     }
@@ -49,7 +51,7 @@ class HomeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update({{ updateRequest }} $request, {{ model }} ${{ modelVariable }})
     {
         //
     }
@@ -57,7 +59,7 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy({{ model }} ${{ modelVariable }})
     {
         //
     }

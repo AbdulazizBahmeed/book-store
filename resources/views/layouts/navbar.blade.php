@@ -1,5 +1,13 @@
 <!-- Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-light">
+<nav class="navbar 
+    navbar-expand-lg 
+    navbar-light  
+    @if(request()->is('dashboard/*'))
+    bg-light
+    @else
+    fixed-top
+    @endif
+    transparent ">
     <!-- Container wrapper -->
     <div class="container-fluid">
         <!-- Toggle button -->
@@ -24,6 +32,7 @@
                     alt="Book Store Logo"
                     loading="lazy" />
             </a>
+
             <!-- Left links -->
             <ul class="navbar-nav  mb-2 mb-lg-0 justify-content-around w-100">
                 <li class="nav-item">
@@ -35,6 +44,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">borrowed books</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('dashboard.users.index')}}">dashboard</a>
+                </li>
             </ul>
             <!-- Left links -->
         </div>
@@ -43,32 +55,7 @@
         <!-- Right elements -->
         <div class="d-flex align-items-center">
 
-            <!-- Notifications -->
-            <div class="dropdown me-4 notifications">
-                <a
-                    data-mdb-dropdown-init
-                    class="link-secondary dropdown-toggle hidden-arrow"
-                    href="#"
-                    id="navbarDropdownNotifications"
-                    role="button"
-                    aria-expanded="false">
-                    <i id="notifications-icon" class="fas fa-bell fs-3"></i>
-                    <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                </a>
-                <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="navbarDropdownMenuLink">
-                    <li>
-                        <a class="dropdown-item" href="#">Some news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Another news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                </ul>
-            </div>
+            @if (Auth::check())
             <!-- Avatar -->
             <div class="dropdown avatar">
                 <a
@@ -89,16 +76,19 @@
                     class="dropdown-menu dropdown-menu-end"
                     aria-labelledby="navbarDropdownMenuAvatar">
                     <li>
-                        <a class="dropdown-item" href="#">My profile</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Settings</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                     </li>
                 </ul>
             </div>
+            @else
+            <a href="{{route('login')}}">
+                <button type="button" class="btn btn-primary btn-rounded"
+                    data-mdb-ripple-init>
+                    login
+                </button>
+            </a>
+            @endif
+
         </div>
         <!-- Right elements -->
     </div>

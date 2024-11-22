@@ -26,9 +26,8 @@
     <script
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.umd.min.js" defer></script>
-
-    <!-- app.js -->
-    <script src="{{ URL::asset('js/app.js') }}" type="module"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <!-- app.css -->
     <link
@@ -39,15 +38,30 @@
 
 </head>
 
-<body>
-    {{-- @include('layouts.loader') --}}
+<body class="position-relative min-vh-100 w-100">
+    <!-- navbar  -->
     @include('layouts.navbar')
 
-    <!-- [ Main Content ] start -->
-    @yield('content')
-    <!-- [ Main Content ] end -->
 
+
+    @if(request()->is('dashboard/*'))
+    <div class="d-flex">
+        <!-- sidebar -->
+        @include('layouts.sidebar')
+        <!-- sidebar -->
+        <div class="p-5">
+            @yield('content')
+        </div>
+    </div>
+    @else
+
+    @yield('content')
+
+    @endif
+
+    <!-- footer -->
     @include('layouts.footer')
+
     @yield('scripts')
 </body>
 <!-- [Body] end -->
