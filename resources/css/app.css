@@ -6,6 +6,11 @@
     --primary-color-light-rgb: #25718033;
     --mdb-input-focus-border-color: var(--primary-color);
     --mdb-input-focus-label-color: var(--primary-color);
+    font-size: small;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
 }
 
 .btn.btn-primary {
@@ -31,6 +36,7 @@ body {
     font-family: "Delius Unicase", cursive;
     font-style: normal;
     background-color: #ececec;
+    /* height: 100vh; */
 }
 
 input[type="date"] {
@@ -108,7 +114,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* end navbar */
 
-/* sidebar */
+/* start sidebar */
 @media (min-width: 200px) {
     .d-lg-block {
         display: block !important;
@@ -137,8 +143,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .list-group-item-action:focus {
     background-color: transparent;
 }
-
-/* sidebar */
+/* end sidebar */
 
 /* start footer */
 footer {
@@ -146,4 +151,4 @@ footer {
     color: white;
     background-color: var(--primary-color);
 }
-/* start footer */
+/* end footer */

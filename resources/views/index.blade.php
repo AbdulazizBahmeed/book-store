@@ -61,7 +61,6 @@
 
     .books-list {
         gap: 6rem;
-        font-size: 0.7rem;
     }
 </style>
 @endsection

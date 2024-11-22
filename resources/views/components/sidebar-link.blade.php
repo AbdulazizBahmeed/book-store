@@ -3,11 +3,11 @@
     href="{{$url}}" class="
     list-group-item
     list-group-item-action 
-    py-2
+    p-2
     mt-2
     ripple
     rounded-pill
-    @if(url()->full() == $url))
+    @if(request()->routeIs('dashboard.users.*'))
     active
     @endif
     ">
