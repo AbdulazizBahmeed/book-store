@@ -103,5 +103,14 @@ class BookSeeder extends Seeder
             'cover_image' => 'framed.jpg',
             'category_id' => 7,
         ]);
+        Book::create([
+            'name' => 'Lime Green Bold Business',
+            'author' => 'Jim McCloskey ',
+            'reviews' => rand(50,999),
+            'rating' => mt_rand (1*100, 5*100) / 100,
+            'borrow_rate' => mt_rand (1, 15),
+            'cover_image' => 'Lime-Green-Bold-Business.jpg',
+            'category_id' => 4,
+        ]);
     }
 }
