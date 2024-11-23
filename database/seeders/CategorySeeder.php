@@ -13,12 +13,12 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create(['name' => 'Horror']);
-        Category::create(['name' => 'Science fiction']);
         Category::create(['name' => 'Fantasy']);
-        Category::create(['name' => 'Mystery']);
+        Category::create(['name' => 'PSYCHOLOGY']);
+        Category::create(['name' => 'Romance']);
         Category::create(['name' => 'Business and economics']);
-        Category::create(['name' => 'Health and fitness']);
+        Category::create(['name' => 'Management & Leadership']);
+        Category::create(['name' => 'Health And Fitness']);
         Category::create(['name' => 'History']);
     }
 }

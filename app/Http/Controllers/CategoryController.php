@@ -32,7 +32,8 @@ class CategoryController extends Controller
     {
         $data = $request->safe()->all();
         $category = Category::create($data);
-        return redirect()->route('dashboard.categories.index')->with('success', 'category '. $category->name .' create successfully');
+        return redirect()->route('dashboard.categories.index')
+        ->with('success', 'category '. $category->name .' create successfully');
     }
 
     /**
@@ -50,7 +51,8 @@ class CategoryController extends Controller
     {
         $data = $request->safe()->all();
         $category->update($data);
-        return redirect()->route('dashboard.users.index')->with('success', 'category '. $category->name .' updated successfully');
+        return redirect()->route('dashboard.users.index')
+        ->with('success', 'category '. $category->name .' updated successfully');
     }
 
     /**
@@ -59,6 +61,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('dashboard.categories.index')->with('success', 'category '. $category->name .' deleted successfully');;
+        return redirect()->route('dashboard.categories.index')
+        ->with('success', 'category '. $category->name .' deleted successfully');
     }
 }

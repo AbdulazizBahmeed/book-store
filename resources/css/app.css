@@ -151,9 +151,13 @@ footer {
 }
 /* end footer */
 
-/* data tables */
+/* start data tables */
+#datatable {
+    font-size: small;
+}
 #datatable td {
     line-height: 50px;
+    font-weight: bold;
     padding: 1rem !important;
 }
 
@@ -161,5 +165,24 @@ footer {
     text-align: center;
 }
 
+/* end data tables */
 
-/* data tables */
+
+/* start forms */
+.form-outline .form-control.select-input {
+    box-sizing: border-box !important;
+    transition: all 0.1s linear !important;
+    border: var(--mdb-form-control-border-color) 1px solid !important;
+}
+
+.form-outline .form-control.select-input:focus,
+.form-control.file-input:focus {
+    box-shadow: inset 0px 0px 0px 1px var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.select-input ~ label {
+    background-color: white;
+    transform: translateY(-1rem) translateY(0.1rem) scale(0.8);
+}
+

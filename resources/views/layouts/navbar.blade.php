@@ -36,10 +36,10 @@
             <!-- Left links -->
             <ul class="navbar-nav  mb-2 mb-lg-0 justify-content-around w-100">
                 <li class="nav-item">
-                    <a class="nav-link fw-bold position-relative active" href="#">books</a>
+                    <a class="nav-link fw-bold position-relative active" href={{route('index')}}>home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold position-relative" href="#">popular</a>
+                    <a class="nav-link fw-bold position-relative" href="#">books</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-bold position-relative" href="#">borrowed books</a>

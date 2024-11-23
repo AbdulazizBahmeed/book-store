@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\User;
+use App\Models\Book;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class UsersDataTable extends DataTable
+class BooksDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -23,17 +23,17 @@ class UsersDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addIndexColumn()
-            ->editColumn('actions', fn($user) => view('dashboard.users.datatable.actions', compact('user')))
-            ->editColumn('created_at', fn($user) => $user->created_at->format('d-m-Y h:iA'))
+            ->editColumn('actions', fn($book) => view('dashboard.books.datatable.actions', compact('book')))
+            ->editColumn('created_at', fn($book) => $book->created_at->format('d-m-Y h:iA'))
             ->rawColumns(['actions']);
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(User $model): QueryBuilder
+    public function query(Book $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->with('category');
     }
 
     /**
@@ -46,7 +46,7 @@ class UsersDataTable extends DataTable
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->responsive()
-            ->orderBy(3)
+            ->orderBy(1)
             ->autoWidth(false);
     }
 
@@ -60,8 +60,12 @@ class UsersDataTable extends DataTable
                 ->title('#')
                 ->orderable(false)
                 ->searchable(false),
-            Column::make('full_name')->title('full name'),
-            Column::make('email'),
+            Column::make('name'),
+            Column::make('author'),
+            Column::make('category.name')->title('category'),
+            Column::make('reviews')->searchable(false),
+            Column::make('rating')->searchable(false),
+            Column::make('borrow_rate')->searchable(false),
             Column::make('created_at')->searchable(false),
             Column::make('actions')->searchable(false)->orderable(false),
         ];
@@ -72,6 +76,6 @@ class UsersDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Users_' . date('YmdHis');
+        return 'Books_' . date('YmdHis');
     }
 }

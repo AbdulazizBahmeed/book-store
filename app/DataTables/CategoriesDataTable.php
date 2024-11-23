@@ -46,7 +46,7 @@ class CategoriesDataTable extends DataTable
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->responsive()
-            ->orderBy(2, 'desc')
+            ->orderBy(2)
             ->autoWidth(false);
     }
 
@@ -60,7 +60,7 @@ class CategoriesDataTable extends DataTable
                 ->title('#')
                 ->orderable(false)
                 ->searchable(false),
-            Column::make('name')->title('name'),
+            Column::make('name'),
             Column::make('created_at')->searchable(false),
             Column::make('actions')->searchable(false)->orderable(false),
         ];

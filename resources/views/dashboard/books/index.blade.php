@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<div class="card me-5">
+<div class="card">
     @if (session('success'))
     <div class="p-2">
         <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
@@ -20,12 +20,12 @@
     @endif
 
     <div class="card-header d-flex justify-content-between align-items-center">
-        <p class="m-0">Manage Categories</p>
-        <a href="{{route('dashboard.categories.create')}}">
+        <p class="m-0">Manage Books</p>
+        <a href="{{route('dashboard.books.create')}}">
             <button type="button"
                 class="btn btn-primary btn-rounded"
                 data-mdb-ripple-init>
-                create category
+                create book
             </button>
         </a>
     </div>

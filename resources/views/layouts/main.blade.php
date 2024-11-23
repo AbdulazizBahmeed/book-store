@@ -44,6 +44,9 @@
         href="{{ URL::asset('css/app.css') }}"
         rel="stylesheet" />
 
+    <!-- app.js -->
+     <script src="{{ URL::asset('js/app.js') }}" defer></script>
+
     @yield('css')
 
 </head>

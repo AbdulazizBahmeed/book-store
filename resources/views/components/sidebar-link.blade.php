@@ -4,7 +4,7 @@
     list-group-item
     list-group-item-action 
     p-2
-    mt-2
+    mt-4
     ripple
     rounded-pill
     @if(Str::is("$url*", URL::current()))

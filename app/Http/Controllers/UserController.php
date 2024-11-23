@@ -36,7 +36,8 @@ class UserController extends Controller
     {
         $data = $request->safe()->all();
         $user = User::create($data);
-        return redirect()->route('dashboard.users.index')->with('success', 'user '. $user->full_name .' created successfully');
+        return redirect()->route('dashboard.users.index')
+        ->with('success', 'user '. $user->full_name .' created successfully');
     }
 
     /**
@@ -59,7 +60,8 @@ class UserController extends Controller
             unset($data['password']);
         }
         $user->update($data);
-        return redirect()->route('dashboard.users.index')->with('success', 'user '. $user->full_name .' updated successfully');
+        return redirect()->route('dashboard.users.index')
+        ->with('success', 'user '. $user->full_name .' updated successfully');
     }
 
     /**
@@ -68,6 +70,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('dashboard.users.index')->with('success', 'user '. $user->full_name .' deleted successfully');
+        return redirect()->route('dashboard.users.index')
+        ->with('success', 'user '. $user->full_name .' deleted successfully');
     }
 }
