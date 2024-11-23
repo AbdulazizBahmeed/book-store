@@ -31,7 +31,7 @@
         width: 30%;
         height: 130%;
         content: ' ';
-        background-image: url('images/why-we-sleep.jpg');
+        background-image: url('{{$previewedBook->getCoverImageUrl()}}');
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
@@ -73,14 +73,16 @@
     <div class="w-100 d-flex justify-content-center align-items-center">
 
         <div class="book-info h-100">
-            <h1 class="">why we sleep</h1>
-            <p class="mt-3">Mathew Walker, PhD</p>
-            <button type="button" class="btn btn-primary btn-rounded mt-4" data-mdb-ripple-init>borrow</button>
+            <h1 class="fw-bold">{{$previewedBook->name}}</h1>
+            <h3 class="mt-3">{{$previewedBook->author}}</h3>
+            <button type="button" class="btn btn-primary btn-rounded mt-4" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#modal{{$previewedBook->id}}">borrow</button>
         </div>
 
         <div class="book-img-container d-flex justify-content-center">
-            <img src="{{URL::asset('images/why-we-sleep.jpg')}}">
+            <img src="{{$previewedBook->getCoverImageUrl()}}">
         </div>
+
+        <x-borrow-modal :book="$previewedBook" />
     </div>
 </div>
 <!-- end hero section -->
@@ -90,9 +92,9 @@
 <div class="books-section p-5 w-100">
     <h5 class="books-section-label ps-3 mb-5 position-relative">books</h5>
     <div class="books-list d-flex justify-content-start container-fluid flex-wrap">
-        @for ($i = 0; $i < 10; $i++)
-            <x-book-card :id=$i></x-book-card>
-            @endfor
+        @foreach ($books as $book)
+        <x-book-card :book="$book"></x-book-card>
+        @endforeach
     </div>
 </div>
 <!-- end book list -->
