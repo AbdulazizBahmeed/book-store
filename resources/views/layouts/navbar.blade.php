@@ -35,18 +35,21 @@
 
             <!-- Left links -->
             <ul class="navbar-nav  mb-2 mb-lg-0 justify-content-around w-100">
+
                 <li class="nav-item">
                     <a class="nav-link fw-bold position-relative active" href={{route('index')}}>home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-bold position-relative" href="#">books</a>
-                </li>
+                @auth
                 <li class="nav-item">
                     <a class="nav-link fw-bold position-relative" href="#">borrowed books</a>
                 </li>
+                @endauth
+                @role('Administrator')
                 <li class="nav-item">
                     <a class="nav-link fw-bold position-relative" href="{{route('dashboard.users.index')}}">dashboard</a>
                 </li>
+                @endrole
+
             </ul>
             <!-- Left links -->
         </div>
@@ -55,7 +58,7 @@
         <!-- Right elements -->
         <div class="d-flex align-items-center">
 
-            @if (Auth::check())
+            @auth
             <!-- Avatar -->
             <div class="dropdown avatar">
                 <a
@@ -80,14 +83,17 @@
                     </li>
                 </ul>
             </div>
-            @else
+            @endauth
+
+            @guest
             <a href="{{route('login')}}">
                 <button type="button" class="btn btn-primary btn-rounded"
                     data-mdb-ripple-init>
                     login
                 </button>
             </a>
-            @endif
+            @endguest
+
 
         </div>
         <!-- Right elements -->

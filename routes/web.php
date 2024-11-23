@@ -16,7 +16,7 @@ Route::prefix('auth')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::prefix('dashboard')->name('dashboard.')->group(function() {
+Route::prefix('dashboard')->middleware(['auth', 'role:Administrator'])->name('dashboard.')->group(function() {
     Route::prefix('users')->resource('users', UserController::class);
     Route::prefix('categories')->resource('categories', CategoryController::class);
     Route::prefix('books')->resource('books', BookController::class);

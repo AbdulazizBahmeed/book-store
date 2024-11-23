@@ -14,7 +14,7 @@
         z-index: -1;
         padding-top: 5rem;
         background-image: url('images/library-bg.jpg');
-        filter: brightness(25%);
+        filter: brightness(70%);
     }
 
     .book-info {
