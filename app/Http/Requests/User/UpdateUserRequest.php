@@ -14,7 +14,8 @@ class UpdateUserRequest extends FormRequest
             'full_name' => ['required', 'string', 'min:3', 'max:255'],
             'email' => ['required', 'string', 'max:255', 'email', Rule::unique('users', 'email')->ignore($this->user)],
             'password' => [
-                'required',
+                'sometimes',
+                'nullable',
                 'string',
                 'max:255',
                 Password::min(8)->numbers()->mixedCase(),

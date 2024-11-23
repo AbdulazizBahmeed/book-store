@@ -20,8 +20,8 @@
     @endif
 
     <div class="card-header d-flex justify-content-between align-items-center">
-        <p class="m-0">Manage Users</p>
-        <a href="{{route('dashboard.users.create')}}">
+        <p class="m-0">Manage Categories</p>
+        <a href="{{route('dashboard.categories.create')}}">
             <button type="button"
                 class="btn btn-primary btn-rounded"
                 data-mdb-ripple-init>

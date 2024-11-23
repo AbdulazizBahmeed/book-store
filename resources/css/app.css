@@ -6,7 +6,7 @@
     --primary-color-light-rgb: #25718033;
     --mdb-input-focus-border-color: var(--primary-color);
     --mdb-input-focus-label-color: var(--primary-color);
-    font-size: small;
+    font-size: 12px;
 }
 
 .text-primary {
@@ -74,8 +74,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .navbar-nav .nav-link {
     transition: all 0.5s;
-    position: relative;
-    font-weight: bold;
     color: black;
 }
 
@@ -152,3 +150,16 @@ footer {
     background-color: var(--primary-color);
 }
 /* end footer */
+
+/* data tables */
+#datatable td {
+    line-height: 50px;
+    padding: 1rem !important;
+}
+
+#datatable .dt-type-numeric {
+    text-align: center;
+}
+
+
+/* data tables */

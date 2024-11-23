@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DataTables\UsersDataTable;
 use App\Http\Requests\User\StoreUserRequest;
+use App\Http\Requests\User\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
+use function PHPUnit\Framework\isNull;
 
 class UserController extends Controller
 {
@@ -32,7 +36,7 @@ class UserController extends Controller
     {
         $data = $request->safe()->all();
         $user = User::create($data);
-        return redirect()->route('dashboard.users.index')->with('success', 'user '. $user->full_name .' create successfully');
+        return redirect()->route('dashboard.users.index')->with('success', 'user '. $user->full_name .' created successfully');
     }
 
     /**
@@ -46,9 +50,16 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $data = $request->safe()->all();
+        if(!is_null($data['password'])){
+            $data['password'] = Hash::make($data['password']);
+        } else {
+            unset($data['password']);
+        }
+        $user->update($data);
+        return redirect()->route('dashboard.users.index')->with('success', 'user '. $user->full_name .' updated successfully');
     }
 
     /**

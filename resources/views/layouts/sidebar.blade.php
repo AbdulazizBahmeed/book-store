@@ -5,4 +5,11 @@
         :url="route('dashboard.users.index')"
         />
     </div>
+
+    <div class="list-group list-group-flush p-2">
+        <x-sidebar-link label='categories management' 
+        iconClasses='fa fa-bookmark'
+        :url="route('dashboard.categories.index')"
+        />
+    </div>
 </div>

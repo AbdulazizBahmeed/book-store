@@ -7,7 +7,7 @@
     mt-2
     ripple
     rounded-pill
-    @if(request()->routeIs('dashboard.users.*'))
+    @if(Str::is("$url*", URL::current()))
     active
     @endif
     ">

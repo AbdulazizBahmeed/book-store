@@ -11,7 +11,7 @@
 @section('content')
 <div class="d-flex justify-content-center w-100">
     <div class="card w-75">
-        <div class="card-header fw-bold fw-capital">create user</div>
+        <div class="card-header fw-bold fw-capital">edit user</div>
         <div class="card-body">
             <form action={{route('dashboard.users.update', $user)}} method="POST">
                 @csrf
@@ -52,7 +52,7 @@
 
                 <hr>
                 <!-- Submit button -->
-                <button data-mdb-ripple-init type="submit" class="btn btn-primary fw-capital">create</button>
+                <button data-mdb-ripple-init type="submit" class="btn btn-primary fw-capital">update</button>
             </form>
         </div>
     </div>

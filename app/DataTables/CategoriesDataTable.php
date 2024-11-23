@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\User;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,7 +12,7 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class UsersDataTable extends DataTable
+class CategoriesDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
@@ -23,15 +23,15 @@ class UsersDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addIndexColumn()
-            ->editColumn('actions', fn($user) => view('dashboard.users.datatable.actions', compact('user')))
-            ->editColumn('created_at', fn($user) => $user->created_at->format('d-m-Y h:iA'))
+            ->editColumn('actions', fn($category) => view('dashboard.categories.datatable.actions', compact('category')))
+            ->editColumn('created_at', fn($category) => $category->created_at->format('d-m-Y h:iA'))
             ->rawColumns(['actions']);
     }
 
     /**
      * Get the query source of dataTable.
      */
-    public function query(User $model): QueryBuilder
+    public function query(Category $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -46,7 +46,7 @@ class UsersDataTable extends DataTable
             ->columns($this->getColumns())
             ->minifiedAjax()
             ->responsive()
-            ->orderBy(3, 'desc')
+            ->orderBy(2, 'desc')
             ->autoWidth(false);
     }
 
@@ -60,8 +60,7 @@ class UsersDataTable extends DataTable
                 ->title('#')
                 ->orderable(false)
                 ->searchable(false),
-            Column::make('full_name')->title('full name'),
-            Column::make('email'),
+            Column::make('name')->title('name'),
             Column::make('created_at')->searchable(false),
             Column::make('actions')->searchable(false)->orderable(false),
         ];
@@ -72,6 +71,6 @@ class UsersDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Users_' . date('YmdHis');
+        return 'Categories_' . date('YmdHis');
     }
 }

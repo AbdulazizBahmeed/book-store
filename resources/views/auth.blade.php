@@ -18,7 +18,7 @@
   }
 
   .alert {
-    font-size: small;
+    font-size: smaller;
   }
 </style>
 @endsection
@@ -72,21 +72,21 @@
             <form action="{{route('login')}}" method="POST">
               @csrf
               <!-- Email input -->
-              <div data-mdb-input-init class="form-outline mb-4">
+              <div data-mdb-input-init class="form-outline">
                 <input type="email" id="loginName" class="form-control" name="email" />
                 <label class="form-label" for="loginName">Email or username</label>
               </div>
-              @error('email') <div class="text-danger"> {{$message}}</div> @enderror
+              @error('email') <div class="text-danger mt-1 ps-1"> {{$message}}</div> @enderror
 
               <!-- Password input -->
-              <div data-mdb-input-init class="form-outline mb-4">
+              <div data-mdb-input-init class="form-outline mt-4">
                 <input type="password" id="loginPassword" class="form-control" name="password" />
                 <label class="form-label" for="loginPassword">Password</label>
               </div>
-              @error('password') <div class="text-danger"> {{$message}}</div> @enderror
+              @error('password') <div class="text-danger mt-1 ps-1"> {{$message}}</div> @enderror
 
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+              <button type="submit" class="btn btn-primary btn-block my-4">Sign in</button>
 
             </form>
           </div>
@@ -101,7 +101,7 @@
             <form action="{{route('register')}}" method="POST">
               @csrf
               <!-- Name input -->
-              <div data-mdb-input-init class="form-outline mb-4">
+              <div data-mdb-input-init class="form-outline">
                 <input type="text"
                   id="registerName"
                   class="form-control @error('full_name') is-invalid @enderror"
@@ -110,10 +110,10 @@
                   value="{{old('full_name')}}" />
                 <label class="form-label" for="registerName">Name</label>
               </div>
-              @error('full_name') <div class="text-danger"> {{$message}}</div> @enderror
+              @error('full_name') <div class="text-danger mt-1 ps-1"> {{$message}}</div> @enderror
 
               <!-- Email input -->
-              <div data-mdb-input-init class="form-outline mb-4">
+              <div data-mdb-input-init class="form-outline mt-4">
                 <input type="email"
                   id="registerEmail"
                   class="form-control @error('email') is-invalid @enderror"
@@ -122,10 +122,10 @@
                   value="{{old('email')}}" />
                 <label class="form-label" for="registerEmail">Email</label>
               </div>
-              @error('email') <div class="text-danger"> {{$message}}</div> @enderror
+              @error('email') <div class="text-danger mt-1 ps-1"> {{$message}}</div> @enderror
 
               <!-- Password input -->
-              <div data-mdb-input-init class="form-outline mb-4">
+              <div data-mdb-input-init class="form-outline mt-4">
                 <input type="password"
                   id="registerPassword"
                   class="form-control @error('password') is-invalid @enderror"
@@ -134,10 +134,10 @@
                   value="{{old('password')}}" />
                 <label class="form-label" for="registerPassword">Password</label>
               </div>
-              @error('password') <div class="text-danger"> {{$message}}</div> @enderror
+              @error('password') <div class="text-danger mt-1 ps-1"> {{$message}}</div> @enderror
 
               <!-- Repeat Password input -->
-              <div data-mdb-input-init class="form-outline mb-4">
+              <div data-mdb-input-init class="form-outline mt-4">
                 <input type="password"
                   id="registerRepeatPassword"
                   class="form-control @error('password_confirmation') is-invalid @enderror"
@@ -145,10 +145,10 @@
                   required />
                 <label class="form-label" for="registerRepeatPassword">Repeat password</label>
               </div>
-              @error('password_confirmation') <div class="text-danger"> {{$message}}</div> @enderror
+              @error('password_confirmation') <div class="text-danger mt-1 ps-1"> {{$message}}</div> @enderror
 
               <!-- Submit button -->
-              <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-3">register</button>
+              <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block my-4">register</button>
             </form>
           </div>
           <!-- end register form -->
