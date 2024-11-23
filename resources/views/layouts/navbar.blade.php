@@ -37,16 +37,38 @@
             <ul class="navbar-nav  mb-2 mb-lg-0 justify-content-around w-100">
 
                 <li class="nav-item">
-                    <a class="nav-link fw-bold position-relative active" href={{route('index')}}>home</a>
+                    <a class="
+                    nav-link 
+                    fw-bold 
+                    position-relative
+                    @if(request()->is('/'))
+                    active
+                    @endif
+                    "
+                        href={{route('index')}}>home</a>
                 </li>
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link fw-bold position-relative" href={{route('orders.index')}}>borrowed books</a>
+                    <a class="nav-link 
+                    fw-bold 
+                    position-relative
+                    @if(request()->is('orders*'))
+                    active
+                    @endif
+                    " 
+                    href={{route('orders.index')}}>borrowed books</a>
                 </li>
                 @endauth
+
                 @role('Administrator')
                 <li class="nav-item">
-                    <a class="nav-link fw-bold position-relative" href="{{route('dashboard.users.index')}}">dashboard</a>
+                    <a class="nav-link 
+                    fw-bold 
+                    position-relative
+                    @if(request()->is('dashboard*'))
+                    active
+                    @endif" 
+                    href="{{route('dashboard.users.index')}}">dashboard</a>
                 </li>
                 @endrole
 
