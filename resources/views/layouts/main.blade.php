@@ -45,17 +45,20 @@
         rel="stylesheet" />
 
     <!-- app.js -->
-     <script src="{{ URL::asset('js/app.js') }}" defer></script>
+    <script src="{{ URL::asset('js/app.js') }}" defer></script>
 
     @yield('css')
 
 </head>
 
 <body class="position-relative min-vh-100 w-100">
+    <!-- toast message -->
+    @if (session('success'))
+    @include('layouts.toast')
+    @endif
+
     <!-- navbar  -->
     @include('layouts.navbar')
-
-
 
     @if(request()->is('dashboard/*'))
     <div class="d-flex">

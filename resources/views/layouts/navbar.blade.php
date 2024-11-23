@@ -2,7 +2,7 @@
 <nav class="navbar 
     navbar-expand-lg 
     navbar-light  
-    @if(request()->is('dashboard/*'))
+    @if(request()->is('dashboard*') || request()->is('orders*'))
     bg-light
     @else
     fixed-top
@@ -41,7 +41,7 @@
                 </li>
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link fw-bold position-relative" href="#">borrowed books</a>
+                    <a class="nav-link fw-bold position-relative" href={{route('orders.index')}}>borrowed books</a>
                 </li>
                 @endauth
                 @role('Administrator')
