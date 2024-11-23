@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $books = Book::with('category')->limit(6)->get();
+        $books = Book::with('category')->get();
         $data = [
             'previewedBook' => $books->random(),
             'books' => $books,
