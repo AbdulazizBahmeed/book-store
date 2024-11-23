@@ -13,7 +13,7 @@ class Book extends Model
 
     public function getCoverImageUrl()
     {
-        return Storage::url($this::$storageFolderName.'/'.$this->image);
+        return Storage::url($this::$storageFolderName.'/'.$this->cover_image);
     }
 
     public function category(): BelongsTo

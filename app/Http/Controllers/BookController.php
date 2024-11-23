@@ -41,12 +41,8 @@ class BookController extends Controller
     public function store(StoreBookRequest $request)
     {
         $data = $request->safe()->all();
-        if (!is_null($data['cover_image'])) {
-            $data['cover_image'] = $this->fileUploadService
-                ->uploadFile($data['cover_image'], Book::$storageFolderName);
-        } else {
-            unset($data['cover_image']);
-        }
+        $data['cover_image'] = $this->fileUploadService
+            ->uploadFile($data['cover_image'], Book::$storageFolderName);
         $data['reviews'] = rand(50, 999);
         $data['rating'] = mt_rand(1 * 100, 5 * 100) / 100;
         $book = Book::create($data);

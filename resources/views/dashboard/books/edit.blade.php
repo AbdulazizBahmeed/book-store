@@ -87,7 +87,7 @@
                     </div>
                     <div class="col-6 w-100 d-flex justify-content-center align-items-center mt-4">
                         <div class="w-25">
-                            <img id="image-preview" src=''
+                            <img id="image-preview" src='{{$book->getCoverImageUrl()}}'
                                 class="img-thumbnail" />
                         </div>
                     </div>
@@ -96,6 +96,7 @@
                 <!-- Submit button -->
                 <button data-mdb-ripple-init type="submit" class="btn btn-primary fw-capital">create</button>
             </form>
+            {{$book->getCoverImageUrl()}}
         </div>
     </div>
 </div>

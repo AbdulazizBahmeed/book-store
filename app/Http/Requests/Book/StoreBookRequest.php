@@ -16,7 +16,6 @@ class StoreBookRequest extends FormRequest
             'category_id' => ['required', 'integer', 'exists:categories,id'],
             'cover_image' => [
                 'required',
-                'nullable',
                 'image',
                 'dimensions:ratio=5/8'
             ],
