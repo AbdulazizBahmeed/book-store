@@ -164,5 +164,13 @@
 @endsection
 
 @section('scripts')
-
+@if ($errors->any() && session('register'))
+<script>
+  const registerTabBtn =document.getElementById('tab-register')
+  console.log(registerTabBtn);
+  setTimeout(function(){
+    registerTabBtn.click()
+  }, 100)
+</script>
+@endif
 @endsection

@@ -21,4 +21,13 @@ class RegisterRequest extends FormRequest
             ],
         ];
     }
+
+    public function after(): array
+{
+    return [
+        function () {
+            session()->flash('register', 'register');
+        }
+    ];
+}
 }
