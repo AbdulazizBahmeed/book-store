@@ -16,6 +16,10 @@ return new class extends Migration
             $table->morphs('orderable');
             $table->date('from');
             $table->date('to');
+            $table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use App\DataTables\UserOrdersDataTable;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -23,23 +24,9 @@ class OrderController extends Controller
     public function store(StoreOrderRequest $request)
     {
         $data = $request->safe()->all();
+        $data['user_id'] = Auth::id();
         Order::create($data);
         return redirect()->route('index')->with('success', 'the borrowing operation succeeded');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateOrderRequest $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Order $order)
-    {
-        //
-    }
 }

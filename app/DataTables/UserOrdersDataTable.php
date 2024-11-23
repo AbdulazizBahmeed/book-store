@@ -7,6 +7,7 @@ use App\Models\Order;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Column;
@@ -37,7 +38,7 @@ class UserOrdersDataTable extends DataTable
     {
         return $model->newQuery()->with(["orderable" => function (MorphTo $morphTo) {
             $morphTo->morphWith([Book::class]);
-        }]);
+        }])->whereId(Auth::id());
     }
 
     /**

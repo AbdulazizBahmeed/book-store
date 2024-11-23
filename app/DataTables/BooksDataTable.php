@@ -24,7 +24,7 @@ class BooksDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addIndexColumn()
             ->editColumn('actions', fn($book) => view('dashboard.books.datatable.actions', compact('book')))
-            ->editColumn('created_at', fn($book) => $book->created_at->format('d-m-Y h:iA'))
+            ->editColumn('thumbnail', fn($book) => view('dashboard.books.datatable.thumbnail', compact('book')))
             ->rawColumns(['actions']);
     }
 
@@ -60,13 +60,13 @@ class BooksDataTable extends DataTable
                 ->title('#')
                 ->orderable(false)
                 ->searchable(false),
+            Column::make('thumbnail')->searchable(false)->orderable(false),
             Column::make('name'),
             Column::make('author'),
             Column::make('category.name')->title('category'),
             Column::make('reviews')->searchable(false),
             Column::make('rating')->searchable(false),
             Column::make('borrow_rate')->searchable(false),
-            Column::make('created_at')->searchable(false),
             Column::make('actions')->searchable(false)->orderable(false),
         ];
     }
