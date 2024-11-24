@@ -54,7 +54,7 @@ cp .env.example .env
 
 3. **install php packages**
 ```
-coposer install
+composer install
 ```
 
 4. **Generate a new project key**
