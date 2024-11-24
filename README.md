@@ -52,28 +52,33 @@ cp .env.example .env
 cp .env.example .env
 ```
 
-3. **Generate a new project key**
+3. **install php packages**
+```
+coposer install
+```
+
+4. **Generate a new project key**
 ```
 php artisan key:generate
 ```
-4. **Configure Database**
+5. **Configure Database**
 - Edit the .env file with your database credentials or use SQLite (not recommended).
 - Refresh configuration:
 ```
 php artisan optimize:clear
 ```
 
-5. **Run Migrations with Seeder**
+6. **Run Migrations with Seeder**
 ```
 php artisan migrate:fresh --seed
 ```
 
-5. **Link the storage folder to the public directory for static files:**
+7. **Link the storage folder to the public directory for static files:**
 ```
 php artisan storage:link
 ```
 
-6. **Start the Server**
+8. **Start the Server**
 - Run the local development server:
 ```
 php artisan serve
