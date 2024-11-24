@@ -87,4 +87,14 @@ php artisan serve
 ### Open the project in your browser:
 http://localhost:8000
 
+#### you can either login as:
+- admin user using :
+email: admin@admin.com
+password: Aa123456 
+
+- regular user using :
+email: user@user.com
+password: Aa123456 
+
+
 🎉 Enjoy the System!

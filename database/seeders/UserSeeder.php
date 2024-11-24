@@ -25,9 +25,17 @@ class UserSeeder extends Seeder
         $AdminrRole = Role::findByName('Administrator');
         $AdminrRole->users()->attach($admin);
 
-        // creating regular users
-        $users = User::factory(50)->create();
+        //creating regular user
+        $admin = User::create([
+            'full_name' => 'user',
+            'email' => 'user@user.com',
+            'password' => Hash::make('Aa123456'),
+        ]);
         $UserRole = Role::findByName('User');
+        $AdminrRole->users()->attach($admin);
+
+        // creating other regular users
+        $users = User::factory(50)->create();
         $UserRole->users()->attach($users);
     }
 }
